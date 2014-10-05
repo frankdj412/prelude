@@ -4,8 +4,8 @@
 ;; Personal configuration for emacs
 
 ;;; Code:
-;; (global-linum-mode t)
-;;(global-nlinum-mode 1)
+(global-linum-mode t)
+;; (global-nlinum-mode 1)
 
 
 
@@ -29,11 +29,27 @@
 
 
 ;; Set font
-;; (set-frame-font "-apple-Anonymous_Pro-medium-normal-normal-*-*-*-*-*-m-0-iso10646-1e")
+;; For emacs daemon, default font has to be set in this way
+;; Source: http://stackoverflow.com/questions/3984730/emacs-gui-with-emacs-daemon-not-loading-fonts-correctly"
+(setq default-frame-alist '((font . "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")))
+
+;; Generally this works except daemon mode.
+;; (set-default-font "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
 
 ;; Set line spacing
-(setq-default line-spacing 2)
+;;
+;; WARNING:
+;; This may cause the company mode crash
+;; (setq-default line-spacing 1)
+
+
+
+;; Set line-wrap
+(global-visual-line-mode 1)
+
+
+
 
 ;;; --------------------
 ;;; Company Mode Setting
@@ -47,21 +63,29 @@
 ;; (when window-system
 ;; (set-frame-size (selected-frame) 90 48)
 ;; (set-frame-position (selected-frame) 150 30)
-(add-to-list 'default-frame-alist '(width . 90))
-(add-to-list 'default-frame-alist '(height . 48))
+(add-to-list 'default-frame-alist '(width . 85))
+(add-to-list 'default-frame-alist '(height . 46))
 
 
-
-
-
-
-;;; Company Mode
 ;; Trigger key
-(global-set-key (kbd "S-b") 'company-complete)
+(global-set-key (kbd "s-b") 'company-complete)
+
+
+;; Irony-mode
+;; (eval-after-load 'company
+;;   '(add-to-list 'company-backends 'company-irony))
+
+;; ;; (optional) adds CC special commands to `company-begin-commands' in order to
+;; ;; trigger completion at interesting places, such as after scope operator
+;; ;;     std::|
+;; (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
 
 
 
+
+;;; --------------------
 ;;; Neotree
+;;; --------------------
 ;; F8 to trigger
 (prelude-require-package 'neotree)
 (global-set-key [f8] 'neotree-toggle)
@@ -76,5 +100,16 @@
 
 
 
+;;; --------------------
+;;; Auto indentation
+;;; --------------------
 (electric-indent-mode +1)
+
+
+
+;;; --------------------
+;;; Disable spell check
+;;; --------------------
+(setq prelude-flyspell nil)
+
 ;;;
