@@ -45,7 +45,7 @@
 ;;; -----------------------------
 ;; Set line-wrap
 ;;; -----------------------------
-(global-visual-line-mode 1)
+;; (global-visual-line-mode 1)
 
 
 
