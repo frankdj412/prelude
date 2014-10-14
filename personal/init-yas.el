@@ -13,6 +13,10 @@
           '(lambda ()
              (yas-minor-mode)))
 
+;; (define-key yas-minor-mode-map (kbd "TAB") nil)
+;; (define-key yas-minor-mode-map (kbd "<tab>") nil)
+;; (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+
 ;; Use Helm to select the snippet
 (defun shk-yas/helm-prompt (prompt choices &optional display-fn)
     "Use helm to select a snippet. Put this into `yas/prompt-functions.'"
@@ -34,6 +38,10 @@
             (cdr (assoc result rmap))))
       nil))
 
+;; (setq yas/prompt-functions nil)
 (add-hook 'yas/prompt-functions 'shk-yas/helm-prompt)
+;; (eval-after-load 'company
+;;   '(add-to-list 'company-backends 'company-yasnippet))
 
+(global-set-key (kbd "<backtab>") 'company-yasnippet)
 ;; (add-to-list 'company-backends '(company-clang company-yasnippet))
