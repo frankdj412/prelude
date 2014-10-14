@@ -19,68 +19,6 @@
 
 
 
-;;; --------------------
-;;; Theme Setting
-;;; --------------------
-;; (disable-theme 'zenburn)
-;; (prelude-require-package 'hc-zenburn-theme)
-;; (load-theme 'hc-zenburn)
-;; (load-theme 'solarized-dark t)
-
-
-;; Set font
-;; For emacs daemon, default font has to be set in this way
-;; Source: http://stackoverflow.com/questions/3984730/emacs-gui-with-emacs-daemon-not-loading-fonts-correctly"
-(setq default-frame-alist '((font . "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")))
-
-;; Generally this works except daemon mode.
-;; (set-default-font "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")
-
-
-;; Set line spacing
-;;
-;; WARNING:
-;; This may cause the company mode crash
-;; (setq-default line-spacing 1)
-
-
-
-;; Set line-wrap
-(global-visual-line-mode 1)
-
-
-
-
-;;; --------------------
-;;; Company Mode Setting
-;;; --------------------
-;; (setq company-idle-delay 0)
-;; (setq company-minimum-prefix-length 0)
-
-
-
-;;; Set the start frame
-;; (when window-system
-;; (set-frame-size (selected-frame) 90 48)
-;; (set-frame-position (selected-frame) 150 30)
-(add-to-list 'default-frame-alist '(width . 85))
-(add-to-list 'default-frame-alist '(height . 46))
-
-
-;; Trigger key
-(global-set-key (kbd "s-b") 'company-complete)
-
-
-;; Irony-mode
-;; (eval-after-load 'company
-;;   '(add-to-list 'company-backends 'company-irony))
-
-;; ;; (optional) adds CC special commands to `company-begin-commands' in order to
-;; ;; trigger completion at interesting places, such as after scope operator
-;; ;;     std::|
-;; (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
-
-
 
 
 ;;; --------------------
@@ -110,6 +48,31 @@
 ;;; --------------------
 ;;; Disable spell check
 ;;; --------------------
-(setq prelude-flyspell nil)
+;; (setq prelude-flyspell nil)
+
+
+
+;;; --------------------
+;;; OSX Setting
+;;; --------------------
+;; Switch Meta and Super key
+;; (setq mac-command-modifier 'meta)
+;; (setq mac-option-modifier 'super)
+
+
+
+
+;;; --------------------
+;;; Color-identifier
+;;; --------------------
+;; Website: https://github.com/ankurdave/color-identifiers-mode
+;; This is a funny stuff to play around making code more clear
+;; (add-hook 'after-init-hook 'global-color-identifiers-mode)
+;; (add-hook 'prog-mode-hook 'global-color-identifiers-mode)
+;; (global-color-identifiers-mode)
+;; (add-hook 'prog-mode-hook 'rainbow-identifiers-mode)
+;; (setq debug-on-error t)
+
+
 
 ;;;
