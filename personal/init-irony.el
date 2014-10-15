@@ -9,8 +9,11 @@
 
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
-;; (eval-after-load 'company
-;;   '(add-to-list 'company-backends 'company-yasnippet))
+
+;; Avoid conflicts
+(setq company-backends (remove 'company-semantic company-backends))
+(setq company-backends (remove 'company-clang company-backends))
+
 
 ;; (setq company-backends (remove 'company-clang company-backends))
 ;; (defun company-yasnippet-or-completion ()
