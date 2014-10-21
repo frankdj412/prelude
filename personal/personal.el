@@ -26,7 +26,7 @@
 ;;; --------------------
 ;; F8 to trigger
 (prelude-require-package 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+(global-set-key (kbd "<f5>") 'neotree-toggle)
 
 ;; Solve key "q" conflict with evil-mode
 (add-hook 'neotree-mode-hook
@@ -41,7 +41,7 @@
 ;;; --------------------
 ;;; Auto indentation
 ;;; --------------------
-(electric-indent-mode +1)
+;; (electric-indent-mode +1)
 
 
 
@@ -56,7 +56,7 @@
 ;;; OSX Setting
 ;;; --------------------
 ;; Switch Meta and Super key
-;; (setq mac-command-modifier 'meta)
+
 ;; (setq mac-option-modifier 'super)
 
 
@@ -73,6 +73,9 @@
 ;; (add-hook 'prog-mode-hook 'rainbow-identifiers-mode)
 ;; (setq debug-on-error t)
 
+
+;; (require 'powerline)
+;; (powerline-default-theme)
 
 
 ;;;

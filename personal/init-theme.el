@@ -15,6 +15,7 @@
 ;; (load-theme 'solarized-dark t)
 
 
+; '(global-flycheck-mode t nil (flycheck))
 ;;; -----------------------------
 ;;; Set font
 ;;; -----------------------------
