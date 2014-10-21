@@ -5,6 +5,11 @@
 ;; For installation details, please visit: http://blog.lpch.me/posts/emacs-an-zhuang-irony-on-mac-os-x.html
 
 ;;; Code:
+
+(prelude-require-package 'irony)
+(prelude-require-package 'company-irony)
+
+;; Setting environment
 (setenv "LD_LIBRARY_PATH" "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/")
 
 (eval-after-load 'company
