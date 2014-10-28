@@ -40,7 +40,7 @@
 ;;; Set the start frame
 ;;; -----------------------------
 (add-to-list 'default-frame-alist '(width . 85))
-(add-to-list 'default-frame-alist '(height . 46))
+(add-to-list 'default-frame-alist '(height . 40))
 
 
 ;;; -----------------------------
