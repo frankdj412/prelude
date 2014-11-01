@@ -19,4 +19,6 @@
 (global-set-key (kbd "C-+") 'zoom-in)
 (global-set-key (kbd "C--") 'zoom-out)
 
+
+(global-set-key (kbd "s->") 'ace-jump-buffer)
 ;;; init-global-key.el ends here

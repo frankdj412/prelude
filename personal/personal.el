@@ -4,8 +4,10 @@
 ;; Personal configuration for emacs
 
 ;;; Code:
-(global-linum-mode t)
+;; (global-linum-mode t)
 ;; (global-nlinum-mode 1)
+
+(add-hook 'cc-mode 'linum-mode-hook)
 
 
 
@@ -16,7 +18,6 @@
 ;; Checkout: https://github.com/redguardtoo/evil-nerd-commenter
 (prelude-require-package 'evil-nerd-commenter)
 (evilnc-default-hotkeys)
-
 
 
 
