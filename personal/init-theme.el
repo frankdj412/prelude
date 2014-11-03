@@ -33,4 +33,11 @@
 (require 'face-remap+)
 
 
+(prelude-require-package 'smart-mode-line)
+(prelude-require-package 'powerline)
+(require 'smart-mode-line)
+(sml/setup)
+(sml/apply-theme 'powerline)
+
+
 ;;;
