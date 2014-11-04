@@ -20,4 +20,6 @@
          (read-kbd-macro (format "s-%d" i)) 'company-complete-number))))
 
 (global-set-key (kbd "s-i") 'company-complete)
+(global-unset-key (kbd "C-SPC"))
+(global-set-key (kbd "C-SPC") 'company-complete)
 (global-set-key (kbd "M-<tab>") 'company-complete-common)
