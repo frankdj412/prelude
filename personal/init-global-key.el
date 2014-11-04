@@ -10,7 +10,7 @@
 (define-key evil-visual-state-map (kbd "C-'") 'evil-scroll-up)
 
 ;; Solve for the ret-and-indent currently
-(define-key evil-insert-state-map [remap newline] 'evil-ret-and-indent)
+;; (define-key evil-insert-state-map [remap newline] 'evil-ret-and-indent) ;
 
 
 ;; The "zoom-frm" package gives frame font adjustment
