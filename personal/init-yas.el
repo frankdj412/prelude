@@ -6,6 +6,7 @@
 ;; (add-to-list 'load-path "~/.emacs.d/snippets")
 
 (require 'yasnippet)
+(yas/global-mode t)
 
 ;; Reload all the snippets at startup
 (yas/reload-all)
