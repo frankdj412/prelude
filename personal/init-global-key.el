@@ -1,7 +1,7 @@
 ;;; package --- Summary
 
 ;;; Commentary:
-;;; Rebind some key
+;; Rebind some key
 
 ;;; Code:
 
@@ -12,13 +12,14 @@
 ;; Solve for the ret-and-indent currently
 ;; (define-key evil-insert-state-map [remap newline] 'evil-ret-and-indent) ;
 
-
-;; The "zoom-frm" package gives frame font adjustment
-(prelude-require-package 'zoom-frm)
-(require 'zoom-frm)
-(global-set-key (kbd "C-+") 'zoom-in)
-(global-set-key (kbd "C--") 'zoom-out)
-
+(evil-declare-key 'normal org-mode-map
+  "gk" 'outline-previous-visible-heading
+  "gh" 'outline-up-heading)
 
 (global-set-key (kbd "s->") 'ace-jump-buffer)
+
+;; Switch Meta and Super key
+;; (setq mac-option-modifier 'super)
+
+
 ;;; init-global-key.el ends here

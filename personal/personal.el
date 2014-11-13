@@ -21,7 +21,6 @@
 
 
 
-
 ;;; --------------------
 ;;; Neotree
 ;;; --------------------
@@ -38,29 +37,10 @@
               (define-key evil-normal-state-local-map (kbd "RET") 'neotree-enter)))
 
 
-
-;;; --------------------
-;;; Auto indentation
-;;; --------------------
-;; (electric-indent-mode +1)
-
-
-
 ;;; --------------------
 ;;; Disable spell check
 ;;; --------------------
 ;; (setq prelude-flyspell nil)
-
-
-
-;;; --------------------
-;;; OSX Setting
-;;; --------------------
-;; Switch Meta and Super key
-
-;; (setq mac-option-modifier 'super)
-
-
 
 
 ;;; --------------------
@@ -75,8 +55,7 @@
 ;; (setq debug-on-error t)
 
 
-;; (require 'powerline)
-;; (powerline-default-theme)
 
+(setq TeX-PDF-mode t)
 
 ;;;
