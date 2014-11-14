@@ -43,9 +43,7 @@
 ;; (setq prelude-flyspell nil)
 
 
-;;; --------------------
-;;; Color-identifier
-;;; --------------------
+;;; Color-identifier:
 ;; Website: https://github.com/ankurdave/color-identifiers-mode
 ;; This is a funny stuff to play around making code more clear
 ;; (add-hook 'after-init-hook 'global-color-identifiers-mode)
@@ -56,6 +54,17 @@
 
 
 
+;;; Discover key-binding in current mode:
+;; Key-binding: C-h RET
+(prelude-require-package 'discover)
+(global-discover-mode)
+
+;;; Latex:
 (setq TeX-PDF-mode t)
+
+
+;;; Artist mode:
+;; It seems that the rubber banding functionality fails
+(setq artist-rubber-banding nil)
 
 ;;;
