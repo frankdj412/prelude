@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: askwhy
+# key: askwhy
+# --
+#+begin_comment
+1. What is it?
+2. SO WHAT? Do I really CARE?
+3. Is there similar product?
+4. What is its advantage over the others?
+5. DO I NEED IT?
+6. How to use it?
+7. Can I improve it?
+#+end_comment
