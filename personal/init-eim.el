@@ -7,7 +7,7 @@
 
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/personal/emacs-eim")
+(add-to-list 'load-path "~/.emacs.d/personal/package/emacs-eim")
 (autoload 'eim-use-package "eim" "Another emacs input method")
 (setq eim-use-tooltip nil)
 
