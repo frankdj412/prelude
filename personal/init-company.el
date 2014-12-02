@@ -25,7 +25,7 @@
      (define-key company-mode-map (kbd "C-SPC") 'helm-company)
      (define-key company-active-map (kbd "C-SPC") 'helm-company)))
 
-(setq company-idle-delay 0)
+(setq company-idle-delay 1)
 
 ;; Key Setting
 (global-set-key (kbd "s-i") 'company-complete)
