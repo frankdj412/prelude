@@ -1,10 +1,13 @@
 ;;; package -- Summary
 
 ;;; Commentary:
-;; After using emacs:jedi and elpy, this is the best backend for python environement.
+;; Remove anaconda backend from company backends.
+;; Add elpy support.
 
 ;;; Code:
+(prelude-require-package 'elpy)
+(setq company-backends (remove 'company-anaconda company-backends))
 (elpy-enable)
-
+()
 
 ;;; init-python.el ends here
