@@ -8,6 +8,5 @@
 (prelude-require-package 'elpy)
 (setq company-backends (remove 'company-anaconda company-backends))
 (elpy-enable)
-()
 
 ;;; init-python.el ends here

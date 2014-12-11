@@ -10,17 +10,6 @@
 (add-hook 'cc-mode 'linum-mode-hook)
 
 
-
-;;; --------------------
-;;; Evil Nerd Commenter
-;;; --------------------
-;; It’s Nerd Commenter simulator which help you comment lines efficiently.
-;; Checkout: https://github.com/redguardtoo/evil-nerd-commenter
-(prelude-require-package 'evil-nerd-commenter)
-(evilnc-default-hotkeys)
-
-
-
 ;;; --------------------
 ;;; Neotree
 ;;; --------------------
@@ -54,17 +43,10 @@
 
 
 
-;;; Discover key-binding in current mode:
-;; Key-binding: C-h RET
-(prelude-require-package 'discover)
-(global-discover-mode)
 
 ;;; Latex:
 (setq TeX-PDF-mode t)
 
 
-;;; Artist mode:
-;; It seems that the rubber banding functionality fails
-(setq artist-rubber-banding nil)
 
 ;;;

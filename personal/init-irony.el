@@ -17,6 +17,7 @@
 
 ;; Avoid conflicts
 (setq company-backends (remove 'company-semantic company-backends))
+(setq company-backends (remove 'company-anaconda company-backends))
 ;; (setq company-backends (remove 'company-clang company-backends))
 
 
