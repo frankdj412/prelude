@@ -6,7 +6,7 @@
 ;;; Code:
 
 ;;; anzu replacing:
-(global-set-key (kbd "C-c /") anzu-replace-at-cursor-thing)
+(global-set-key (kbd "C-c /") 'anzu-replace-at-cursor-thing)
 
 
 ;; discover key-binding in current mode: (key-binding: C-h RET)

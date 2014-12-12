@@ -50,7 +50,11 @@
 ;; (add-to-list 'default-frame-alist '(alpha . 95))
 ;; (prelude-require-package 'smart-mode-line)
 ;; (prelude-require-package 'powerline)
+;; make the fringe stand out from the background
 
+
+(disable-theme 'zenburn)
+(load-theme 'monokai t)
 ;; (require 'smart-mode-line)
 ;; (sml/setup)
 ;; (sml/apply-theme 'powerline)
