@@ -21,7 +21,7 @@
 (add-to-list 'default-frame-alist '(height . 45))
 
 ;;; Set selection region color more contrast
-(set-face-attribute 'region nil :background "#666")
+(set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
 
 ;; The window size will be resized with respect to font size
 (prelude-require-package 'zoom-frm)
@@ -54,9 +54,10 @@
 
 
 (disable-theme 'zenburn)
-(load-theme 'monokai t)
-;; (require 'smart-mode-line)
-;; (sml/setup)
-;; (sml/apply-theme 'powerline)
+(load-theme 'monokai)
+;; (add-to-list 'load-path "~/.emacs.d/personal/packages/almost-monokai")
+;; (require 'color-theme-almost-monokai)
+;; (color-theme-almost-monokai)
+;; make the fringe stand out from the background
 
 ;;; init-theme.el ends here

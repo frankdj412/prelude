@@ -1,2 +1,2 @@
 ;; (disable-theme 'zenburn)
-;; (setq prelude-theme 'monokai)
+;; (setq prelude-theme 'molokai)

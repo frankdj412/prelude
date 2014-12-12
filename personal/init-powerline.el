@@ -7,16 +7,22 @@
 
 ;;; Code:
 
-;; (add-to-list 'load-path "~/.emacs.d/personal/packages/emacs-powerline")
-;; (require 'powerline)
 
-;; (setq powerline-arrow-shape 'arrow)
+(prelude-require-package 'powerline)
+(require 'powerline)
+(powerline-evil-vim-color-theme)
 
-;; ;; color of the 2nd part
-;; (setq powerline-color1 "grey22")
+;; (add-to-list 'load-path "~/.emacs.d/personal/packages/emacs-powerline") ;;
+;; (require 'powerline)                                                    ;;
+;;                                                                         ;;
+;; (setq powerline-arrow-shape 'arrow)                                     ;;
+;;                                                                         ;;
+;; ;; color of the 2nd part                                                ;;
+;; (setq powerline-color1 "grey22")                                        ;;
+;;                                                                         ;;
+;; ;; color of the 3rd (middle) part                                       ;;
+;; (setq powerline-color2 "grey40")                                        ;;
 
-;; ;; color of the 3rd (middle) part
-;; (setq powerline-color2 "grey40")
 
 ;; (custom-set-faces
 ;;  ;; '(mode-line ((t (:foreground "#bdbdbd" :box nil))))
