@@ -29,6 +29,11 @@
   (let ((inhibit-read-only t))
     (erase-buffer)))
 
+;; mimic zshell auto-jump feature
+(eval-after-load 'shell
+  '(require 'eshell-autojump nil t))
+
+(setq eshell-lasts-dir-rint-size 500)
 ;; Emacs use .bashrc file
 ;; (defun set-exec-path-from-shell-PATH ()
 ;;   (let ((path-from-shell (replace-regexp-in-string
