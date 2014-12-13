@@ -31,6 +31,7 @@
 ;;; --------------------
 ;; (setq prelude-flyspell nil)
 
+(desktop-save-mode 1)
 
 ;;; Color-identifier:
 ;; Website: https://github.com/ankurdave/color-identifiers-mode
