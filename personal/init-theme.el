@@ -1,63 +1,31 @@
 ;;; package --- Summary
 
 ;;; Commentary:
-;;; Theme Setting
+;; Theme Setting
 
 ;;; Code:
 
-
-
-;;; Set font
-;; For emacs daemon, default font has to be set in this way
-;; Source: http://stackoverflow.com/questions/3984730/emacs-gui-with-emacs-daemon-not-loading-fonts-correctly"
-(setq default-frame-alist '((font . "-*-monacobsemi-semibold-normal-normal-*-12-*-*-*-p-0-iso10646-1")))
-
-;; Generally this works except daemon mode.
-;; (set-default-font "-apple-Monaco-medium-normal-normal-*-12-*-*-*-m-0-iso10646-1")
-
-(setq-default line-spacing 3)
-
-(add-to-list 'default-frame-alist '(width . 90))
-(add-to-list 'default-frame-alist '(height . 45))
-
-;;; Set selection region color more contrast
-(set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
-
-;; The window size will be resized with respect to font size
-(prelude-require-package 'zoom-frm)
-(prelude-require-package 'face-remap+)
-(require 'face-remap+)
-
-;; The "zoom-frm" package gives frame font adjustment
-(require 'zoom-frm)
-(global-set-key (kbd "C-+") 'zoom-in)
-(global-set-key (kbd "C--") 'zoom-out)
-
-;;; Adjust the frame transparency
-;;; Link: http://github.com/purcell/emacs.d/blob/master/lisp/init-gui-frames.el
-(defun sanityinc/adjust-opacity (frame incr)
-  (let* ((oldalpha (or (frame-parameter frame 'alpha) 100))
-         (newalpha (+ incr oldalpha)))
-    (when (and (<= frame-alpha-lower-limit newalpha) (>= 100 newalpha))
-      (modify-frame-parameters frame (list (cons 'alpha newalpha))))))
-
-(global-set-key (kbd "M-C-8") '(lambda () (interactive) (sanityinc/adjust-opacity nil -5)))
-(global-set-key (kbd "M-C-9") '(lambda () (interactive) (sanityinc/adjust-opacity nil 5)))
-(global-set-key (kbd "M-C-0") '(lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
-
-(setq-default truncate-lines t)
-
-;; (add-to-list 'default-frame-alist '(alpha . 95))
-;; (prelude-require-package 'smart-mode-line)
-;; (prelude-require-package 'powerline)
-;; make the fringe stand out from the background
-
-
 (disable-theme 'zenburn)
 (load-theme 'monokai)
-;; (add-to-list 'load-path "~/.emacs.d/personal/packages/almost-monokai")
-;; (require 'color-theme-almost-monokai)
-;; (color-theme-almost-monokai)
-;; make the fringe stand out from the background
+
+(custom-theme-set-faces
+ `monokai
+
+ ;; '(default ((t (:background nil))))
+ ;; company
+ '(company-preview-common ((t (:foreground "#F8F8F0"))))
+ '(company-tooltip-common ((t (:foreground "#F8F8F0" :underline nil))))
+ '(company-tooltip-common-selection ((t (:foreground "#F8F8F0" :underline nil))))
+
+ ;; theme
+ '(font-lock-builtin-face ((t (:foreground "#66d9ef" :weight normal))))
+ '(whitespace-empty ((t (:background "IndianRed4"))))
+
+ ;; org mode setting
+ '(org-quote ((t (:inherit org-block :foreground "SkyBlue3" :slant italic))) t)
+
+ ;; powerline setting
+ '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "chartreuse4")))))
+
 
 ;;; init-theme.el ends here
