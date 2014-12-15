@@ -9,7 +9,9 @@
 
 
 (prelude-require-package 'powerline)
+(prelude-require-package 'powerline-evil)
 (require 'powerline)
+(require 'powerline-evil)
 (powerline-evil-vim-color-theme)
 
 ;; (add-to-list 'load-path "~/.emacs.d/personal/packages/emacs-powerline") ;;

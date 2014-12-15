@@ -6,23 +6,21 @@
 
 ;; font
 ;; Source: http://stackoverflow.com/questions/3984730/emacs-gui-with-emacs-daemon-not-loading-fonts-correctly"
-(setq default-frame-alist '((font . "-*-Anonymous Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")))
-(set-face-attribute 'default nil :height 150)
-
-(setq-default line-spacing 5)
-
+;; (setq default-frame-alist '((font . "-*-Anonymous Pro-normal-normal-normal-*-*-*-*-*-m-0-iso10646-1")))
+(setq default-frame-alist '((font . "-*-Source Code Pro-light-normal-normal-*-*-*-*-*-m-0-iso10646-1")))
+(set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
 (add-to-list 'default-frame-alist '(width . 90))
 (add-to-list 'default-frame-alist '(height . 45))
 
-;; sharp the selection color
-(set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
+(set-face-attribute 'default nil :height 130)
+(setq-default line-spacing 2)
 
 ;; window size will be resized with respect to font size
-(prelude-require-package 'zoom-frm)
 (prelude-require-package 'face-remap+)
 (require 'face-remap+)
 
 ;; frame adjust with respect to the font size
+(prelude-require-package 'zoom-frm)
 (require 'zoom-frm)
 (global-set-key (kbd "C-+") 'zoom-in)
 (global-set-key (kbd "C--") 'zoom-out)

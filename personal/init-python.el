@@ -2,11 +2,15 @@
 
 ;;; Commentary:
 ;; Remove anaconda backend from company backends.
-;; Add elpy support.
+;; Ad elpy support.
 
 ;;; Code:
 (prelude-require-package 'elpy)
 (setq company-backends (remove 'company-anaconda company-backends))
 (elpy-enable)
 
+
+;;; TODO: write a function for auto import the modules.
+
+;;; TODO: bound flymake-next error to <leader> + n
 ;;; init-python.el ends here

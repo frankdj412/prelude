@@ -3,10 +3,14 @@
 ;;; Commentary:
 ;; My custom setting for emacs.
 
-
 ;;; Code:
+(prelude-require-package 'names)
+(require 'names-dev)
+
+
 (define-namespace dj/
 
+:autoload
 ;; open cheat sheet in evernote
 (defun open-emacs-cheatsheet (arg)
   (interactive "P")
