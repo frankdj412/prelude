@@ -4,9 +4,14 @@
 
 
 ;;; Code:
+
 (setq org-adapt-indentation nil)
 (setq org-src-fontify-natively t)
 (setq org-startup-indented t)
+
+;; solve the conflict with helm-describe-key
+;; It's originally binded to 'org-table-info
+(define-key org-mode-map (kbd "C-c ?") nil)
 
 (defun dj-org-mode-defaults ()
   "DJ's hook for org-mode"

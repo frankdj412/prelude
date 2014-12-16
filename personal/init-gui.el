@@ -37,7 +37,8 @@
 (global-set-key (kbd "M-C-9") '(lambda () (interactive) (sanityinc/adjust-opacity nil 5)))
 (global-set-key (kbd "M-C-0") '(lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
-(setq-default truncate-lines t)
+;; (setq-default truncate-lines nil)
+(setq-default )
 
 ;; (add-to-list 'default-frame-alist '(alpha . 95))
 

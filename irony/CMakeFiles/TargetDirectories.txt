@@ -1,1 +1,0 @@
-/Users/DJ/.emacs.d/irony/src/CMakeFiles/irony-server.dir

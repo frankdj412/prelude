@@ -8,24 +8,29 @@
 (disable-theme 'zenburn)
 (load-theme 'monokai)
 
-;; (custom-theme-set-faces
-;;  `monokai
+;; (require 'color)
 
-;;  ;; '(default ((t (:background nil))))
-;;  ;; company
-;;  '(company-preview-common ((t (:foreground "#F8F8F0"))))
-;;  '(company-tooltip-common ((t (:foreground "#F8F8F0" :underline nil))))
-;;  '(company-tooltip-common-selection ((t (:foreground "#F8F8F0" :underline nil))))
+(custom-theme-set-faces
+ `monokai
 
-;;  ;; theme
-;;  '(font-lock-builtin-face ((t (:foreground "#66d9ef" :weight normal))))
-;;  '(whitespace-empty ((t (:background "IndianRed4"))))
+ ;; '(default ((t (:background nil))))
+ ;; company
+ '(company-preview-common ((t (:foreground "#F8F8F0" :underline t))))
+ '(company-tooltip-common ((t (:foreground "#F8F8F0" :underline nil))))
+ '(company-tooltip-common-selection ((t (:foreground "#F8F8F0" :underline nil))))
 
-;;  ;; org mode setting
-;;  '(org-quote ((t (:inherit org-block :foreground "SkyBlue3" :slant italic))) t)
+ ;; theme
+ '(font-lock-builtin-face ((t (:foreground "#66d9ef" :weight normal))))
+ '(whitespace-empty ((t (:background "IndianRed4"))))
 
-;;  ;; powerline setting
-;;  '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "chartreuse4")))))
+ ;; org mode setting
+ '(org-quote ((t (:inherit org-block :foreground "SkyBlue3" :slant italic))) t)
+
+ ;; italic
+
+ ;; powerline setting
+ '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "chartreuse4")))))
+
 
 
 ;;; init-theme.el ends here
