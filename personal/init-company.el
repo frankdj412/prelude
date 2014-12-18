@@ -4,10 +4,7 @@
 ;; Company Mode Setting
 
 ;;; Code:
-;; (setq company-idle-delay 0)
-;; (setq company-minimum-prefix-length 0)
 
-;; Redefine key bindings
 (global-unset-key (kbd "C-SPC"))
 
 (eval-after-load 'company
@@ -21,9 +18,9 @@
 
      ;; Using Helm Interface
      (define-key company-mode-map (kbd "C-SPC") 'helm-company)
-     (define-key company-active-map (kbd "C-SPC") 'helm-company)))
+     (define-key company-active-map (kbd "C-SPC") 'helm-company)
 
-(setq company-idle-delay 0.5)
+     (setq company-idle-delay 0.5)))
 
 ;; Key Setting
 (global-set-key (kbd "s-i") 'company-complete)

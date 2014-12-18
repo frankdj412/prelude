@@ -5,6 +5,7 @@
 ;; Ad elpy support.
 
 ;;; Code:
+(remove-hook 'python-mode-hook 'anaconda-mode)
 (prelude-require-package 'elpy)
 (setq company-backends (remove 'company-anaconda company-backends))
 (elpy-enable)
