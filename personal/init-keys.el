@@ -5,27 +5,32 @@
 
 ;;; Code:
 
-;;; anzu replacing:
-(global-set-key (kbd "C-c /") 'anzu-replace-at-cursor-thing)
+(prelude-require-package 'discover)
+(prelude-require-package 'evil-nerd-commenter)
 
 
 ;; discover key-binding in current mode: (key-binding: C-h RET)
-(prelude-require-package 'discover)
 (global-discover-mode)
+
 
 ;; Artist mode:
 ;; Note: It seems that the rubber banding functionality fails
 (setq artist-rubber-banding nil)
 
+(global-unset-key [C-backspace])
 
-;; evil Setting
+(global-set-key (kbd "C-c /") 'anzu-replace-at-cursor-thing)
+(global-set-key [C-backspace] 'c-hungry-delete)
+(global-set-key (kbd "s->") 'ace-jump-buffer)
+(global-set-key (kbd "C-x C-b") 'helm-buffers-list)
+
+;; evil mode
 (eval-after-load 'evil
   '(progn
      (define-key evil-normal-state-map (kbd "C-'") 'evil-scroll-up)
      (define-key evil-visual-state-map (kbd "C-'") 'evil-scroll-up)))
 
 ;; evil Nerd Commenter:
-(prelude-require-package 'evil-nerd-commenter)
 (defun dj/evilnc-default-hotkeys ()
   "Set the hotkeys of evil-nerd-comment"
   (interactive)
@@ -43,16 +48,6 @@
 
 (dj/evilnc-default-hotkeys)
 
-
-;; org mode
-(evil-declare-key 'normal org-mode-map
-  "gk" 'outline-previous-visible-heading
-  "gh" 'outline-up-heading)
-
-;; ace jump
-(global-unset-key [C-backspace])
-(global-set-key [C-backspace] 'c-hungry-delete)
-(global-set-key (kbd "s->") 'ace-jump-buffer)
 
 ;; switch Meta and Super key
 ;; (setq mac-option-modifier 'super)

@@ -5,13 +5,19 @@
 
 ;;; Code:
 
-(setq org-adapt-indentation nil)
-(setq org-src-fontify-natively t)
-(setq org-startup-indented t)
+(eval-after-load 'org
+  (progn
+    (setq org-adapt-indentation nil)
+    (setq org-src-fontify-natively t)
+    (setq org-startup-indented t)
+    (setq org-fontify-quote-and-verse-blocks t)))
 
 ;; solve the conflict with helm-describe-key
 ;; It's originally binded to 'org-table-info
 (define-key org-mode-map (kbd "C-c ?") nil)
+(evil-declare-key 'normal org-mode-map
+  "gk" 'outline-previous-visible-heading
+  "gh" 'outline-up-heading)
 
 (defun dj-org-mode-defaults ()
   "DJ's hook for org-mode"
@@ -26,6 +32,7 @@
 (setq dj-org-mode-hook 'dj-org-mode-defaults)
 
 (add-hook 'org-mode-hook (lambda () (run-hooks 'dj-org-mode-hook)))
+
 
 ;; Exporting the source code in black background in default
 ;; (defun my/org-inline-css-hook (exporter)
