@@ -11,9 +11,7 @@
                             powerline
                             powerline-evil))
 
-
 (require 'use-package)
-(require 'face-remap+)
 (require 'zoom-frm)
 (require 'powerline)
 (require 'powerline-evil)
