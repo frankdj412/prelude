@@ -5,7 +5,6 @@
 
 ;;; Code
 
-
 (defun cc/build-current-file ()
   "Runs the compilation of the current file.
 Assumes it has the same name, but without an extension"

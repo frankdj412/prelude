@@ -15,14 +15,14 @@
 ;; (setq solarized-emphasize-indicators nil)
 
 ;; Don't change size of org-mode headlines (but keep other size-changes)
-;; (setq solarized-scale-org-headlines nil)
+(setq solarized-scale-org-headlines t)
 
 ;; Avoid all font-size changes
-;; (setq solarized-height-minus-1 1)
-;; (setq solarized-height-plus-1 1)
-;; (setq solarized-height-plus-2 1)
-;; (setq solarized-height-plus-3 1)
-;; (setq solarized-height-plus-4 1)
+(setq solarized-height-minus-1 1)
+(setq solarized-height-plus-1 1)
+(setq solarized-height-plus-2 1)
+(setq solarized-height-plus-3 1)
+(setq solarized-height-plus-4 1)
 
 (setq x-underline-at-descent-line t)
-(setq prelude-theme 'solarized-dark)
+;; (setq prelude-theme 'solarized-dark)
