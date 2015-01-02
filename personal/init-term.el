@@ -30,10 +30,9 @@
 (defun term-send-tab ()
   "Send tab in term mode."
   (interactive
-  (term-send-raw-string "\t"))
+  (term-send-raw-string "\t")))
 
 (add-to-list 'term-bind-key-alist '("<tab>" . term-send-tab))
-(global-set-key (kbd "C-c m") 'multi-term-dedicated-open)
-
+(global-set-key (kbd "C-c m") 'multi-term)
 
 ;;; init-util.el ends here
