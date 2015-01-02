@@ -27,10 +27,10 @@
 ;; Font:
 (dj/set-font "Source Code Pro for Powerline" 14)
 (setq-default line-spacing 2)
+(set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
+
 (set-fringe-mode 8)
-;; (setq-default left-fringe-width 8)
 (setq diff-hl-fringe-bmp-function 'diff-hl-fringe-bmp-from-type)
-;; (set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
 
 (add-to-list 'default-frame-alist '(width . 86))
 (add-to-list 'default-frame-alist '(height . 39))
@@ -38,12 +38,12 @@
 (global-set-key (kbd "C-+") 'zoom-in)
 (global-set-key (kbd "C--") 'zoom-out)
 
+
 ;; Theme:
 ;; (disable-theme 'zenburn)
 ;; (load-theme 'solarized-dark)
 ;; (setq prelude-theme 'solarized-dark)
 (powerline-evil-vim-color-theme)
-
 
 (custom-set-faces
  '(font-lock-builtin-face ((t (:inherit font-lock-type-face :foreground nil))))
