@@ -49,5 +49,9 @@
 (setq TeX-PDF-mode t)
 
 
+;;; Vagrant
+(eval-after-load 'tramp
+  '(vagrant-tramp-enable))
+
 
 ;;;
