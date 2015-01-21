@@ -25,7 +25,7 @@
     (set-frame-font fontstr)))
 
 ;; Font:
-(dj/set-font "Source Code Pro for Powerline" 14)
+(dj/set-font "Source Code Pro for Powerline" 14 "light")
 (setq-default line-spacing 2)
 (set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
 
