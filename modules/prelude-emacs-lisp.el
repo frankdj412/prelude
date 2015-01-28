@@ -65,7 +65,7 @@ Start `ielm' if it's not already running."
 (defun prelude-emacs-lisp-mode-defaults ()
   "Sensible defaults for `emacs-lisp-mode'."
   (run-hooks 'prelude-lisp-coding-hook)
-  (turn-on-eldoc-mode)
+  (eldoc-mode +1)
   (prelude-recompile-elc-on-save)
   (rainbow-mode +1)
   (setq mode-name "EL")
@@ -82,7 +82,7 @@ Start `ielm' if it's not already running."
 (defun prelude-ielm-mode-defaults ()
   "Sensible defaults for `ielm'."
   (run-hooks 'prelude-interactive-lisp-coding-hook)
-  (turn-on-eldoc-mode))
+  (eldoc-mode +1))
 
 (setq prelude-ielm-mode-hook 'prelude-ielm-mode-defaults)
 
