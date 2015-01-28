@@ -53,5 +53,8 @@
 (eval-after-load 'tramp
   '(vagrant-tramp-enable))
 
+;;; Ack
+(prelude-require-package 'ack)
+(require 'ack)
 
 ;;;

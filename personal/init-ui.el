@@ -9,7 +9,8 @@
                             monokai-theme
                             use-package
                             powerline
-                            powerline-evil))
+                            powerline-evil
+                            color-theme-solarized))
 
 (require 'use-package)
 (require 'zoom-frm)
@@ -33,7 +34,7 @@
 (setq diff-hl-fringe-bmp-function 'diff-hl-fringe-bmp-from-type)
 
 (add-to-list 'default-frame-alist '(width . 86))
-(add-to-list 'default-frame-alist '(height . 39))
+(add-to-list 'default-frame-alist '(height . 36))
 
 (global-set-key (kbd "C-+") 'zoom-in)
 (global-set-key (kbd "C--") 'zoom-out)
@@ -41,8 +42,7 @@
 
 ;; Theme:
 ;; (disable-theme 'zenburn)
-;; (load-theme 'solarized-dark)
-;; (setq prelude-theme 'solarized-dark)
+;; (load-theme 'solarized t)
 (powerline-evil-vim-color-theme)
 
 (custom-set-faces
