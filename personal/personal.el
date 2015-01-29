@@ -4,16 +4,8 @@
 ;; Personal configuration for emacs
 
 ;;; Code:
-;; (global-linum-mode t)
-;; (global-nlinum-mode 1)
 
-(add-hook 'cc-mode 'linum-mode-hook)
-
-
-;;; --------------------
 ;;; Neotree
-;;; --------------------
-;; F8 to trigger
 (prelude-require-package 'neotree)
 (global-set-key (kbd "<f5>") 'neotree-toggle)
 
@@ -43,8 +35,6 @@
 ;; (setq debug-on-error t)
 
 
-
-
 ;;; Latex:
 (setq TeX-PDF-mode t)
 
@@ -56,5 +46,6 @@
 ;;; Ack
 (prelude-require-package 'ack)
 (require 'ack)
+
 
 ;;;
