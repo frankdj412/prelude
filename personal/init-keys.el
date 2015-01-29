@@ -29,12 +29,12 @@
   '(progn
      ;; No Enter is needed for such command
      ;; (define-key evil-ex-map "q" 'ido-kill-buffer)
-     ;; (define-key evil-ex-map "e" 'helm-find-files)
+     (define-key evil-ex-map "e" 'helm-find-files)
      ;; (define-key evil-ex-map "b" 'helm-buffers-list)
 
      ;; Enter is needed after :<cmd>
      (evil-ex-define-cmd "b" 'helm-buffers-list)
-     (evil-ex-define-cmd "e" 'helm-find-files)
+     ;; (evil-ex-define-cmd "e" 'helm-find-files)
      (evil-ex-define-cmd "q" 'ido-kill-buffer)
 
      (define-key evil-normal-state-map (kbd "C-'") 'evil-scroll-up)

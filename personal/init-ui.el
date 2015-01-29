@@ -11,6 +11,11 @@
 (global-set-key (kbd "C-+") 'zoom-in)
 (global-set-key (kbd "C--") 'zoom-out)
 
+;; Smooth Scrolling effect
+;; Copied from http://stackoverflow.com/questions/445873/how-can-i-make-emacs-mouse-scrolling-slower-and-smoother
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+(setq mouse-wheel-progressive-speed nil)
+
 (custom-set-faces
  '(font-lock-builtin-face ((t (:inherit font-lock-type-face :foreground nil))))
  '(powerline-evil-normal-face ((t (:inherit powerline-evil-base-face :background "chartreuse4"))))
