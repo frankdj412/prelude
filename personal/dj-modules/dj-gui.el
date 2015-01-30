@@ -16,7 +16,7 @@
     (add-to-list 'default-frame-alist (cons 'font fontstr))
     (set-frame-font fontstr)))
 
-(dj/set-font "Source Code Pro for Powerline" 14 "light")
+(dj/set-font "Source Code Pro for Powerline" 13)
 
 (setq-default line-spacing 2)
 (set-face-attribute 'region nil :foreground "white" :background "#Aa7941")
