@@ -2,7 +2,7 @@
 
 ;;; Commentary:
 ;;; For ease of c++ programming
-
+;; 
 ;;; Code
 
 (defun cc/get-file-name-with-ext (name)
