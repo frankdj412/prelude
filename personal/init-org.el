@@ -10,7 +10,8 @@
     (setq org-adapt-indentation nil)
     (setq org-src-fontify-natively t)
     (setq org-startup-indented t)
-    (setq org-fontify-quote-and-verse-blocks t)))
+    (setq org-fontify-quote-and-verse-blocks t)
+    (setq org-use-speed-commands t)))
 
 ;; solve the conflict with helm-describe-key
 ;; It's originally binded to 'org-table-info
@@ -19,20 +20,49 @@
   "gk" 'outline-previous-visible-heading
   "gh" 'outline-up-heading)
 
+;; (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((c          . t)
+;;    (css        . t)
+;;    (dot        . t)
+;;    (emacs-lisp . t)
+;;    (js         . t)
+;;    (perl       . t)
+;;    (python     . t)
+;;    (ruby       . t)
+;;    (sh         . t)))
+
 (defun dj-org-mode-defaults ()
   "DJ's hook for org-mode"
-  ;; Set fill-column as 75 is better than 80
   (turn-on-auto-fill)
-  ;; Latex template support
   (turn-on-org-cdlatex))
+
+(require 'dj-funcs)
+(defun org-text-bold ()
+  (interactive)
+  (surround-text "*"))
+
+(defun org-text-italics ()
+  (interactive)
+  (surround-text "/"))
+
+(defun org-text-code ()
+  (interactive)
+  (surround-text "="))
 
 (setq org-format-latex-options (plist-put org-format-latex-options
                                           :scale 1.2))
-
 (setq dj-org-mode-hook 'dj-org-mode-defaults)
 
-(add-hook 'org-mode-hook (lambda () (run-hooks 'dj-org-mode-hook)))
-
+(add-hook 'org-mode-hook
+          (lambda ()
+            (run-hooks 'dj-org-mode-hook)
+            (local-set-key (kbd "A-b") 'org-text-bold)
+            (local-set-key (kbd "s-b") 'org-text-bold)    ;; For Linux
+            (local-set-key (kbd "A-i") 'org-text-italics)
+            (local-set-key (kbd "s-i") 'org-text-italics)
+            (local-set-key (kbd "A-=") 'org-text-code)
+            (local-set-key (kbd "s-=") 'org-text-code)))
 
 ;; Exporting the source code in black background in default
 ;; (defun my/org-inline-css-hook (exporter)
