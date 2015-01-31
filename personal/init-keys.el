@@ -9,14 +9,17 @@
                             evil-leader
                             evil-matchit
                             evil-nerd-commenter
+                            ido-vertical-mode
                             use-package))
 
 (require 'use-package)
 (require 'dj-funcs)
+(require 'ido-vertical-mode)
 
+(global-discover-mode)
 (global-evil-leader-mode)
 (global-evil-matchit-mode)
-(global-discover-mode)
+(ido-vertical-mode 1)
 
 (evil-leader/set-leader "<SPC>")
 
@@ -75,7 +78,7 @@
 
 ;; find -----------------------------------------------------------------------
 (evil-leader/set-key
-  "ff" 'helm-find-file
+  "ff" 'ido-find-file
   "fg" 'rgrep)
 
 ;; file -----------------------------------------------------------------------
@@ -90,6 +93,14 @@
   "fS" 'evil-write-all
   "fs" 'evil-write
   "fy" 'show-and-copy-buffer-filename)
+
+;; flycheck stuff -------------------------------------------------------------
+(evil-leader/set-key
+  "ec" 'flycheck-clear ;; error clear
+  "ef" 'flycheck-mode
+  "el" 'flycheck-list-errors
+  "en" 'spacemacs/next-error
+  "eN" 'spacemacs/previous-error)
 
 ;; helm stuff -----------------------------------------------------------------
 (evil-leader/set-key
@@ -140,13 +151,13 @@
 
 ;; narrow & widen -------------------------------------------------------------
 (use-package fancy-narrow
-             :defer t
-             :init
-             (evil-leader/set-key
-               "nr" 'narrow-to-region
-               "np" 'narrow-to-page
-               "nf" 'narrow-to-defun
-               "nw" 'widen))
+  :defer t
+  :init
+  (evil-leader/set-key
+    "nr" 'narrow-to-region
+    "np" 'narrow-to-page
+    "nf" 'narrow-to-defun
+    "nw" 'widen))
 
 ;; spell check  ---------------------------------------------------------------
 (evil-leader/set-key
@@ -248,7 +259,6 @@
 (eval-after-load 'evil
   '(progn
      (define-key evil-ex-map "e" 'helm-find-files)
-
      (evil-ex-define-cmd "b" 'helm-buffers-list)
      (evil-ex-define-cmd "q" 'ido-kill-buffer)
 
@@ -272,11 +282,6 @@
        (define-key evil-normal-state-map "gcr" 'comment-or-uncomment-region))))
 
 (dj/evilnc-default-hotkeys)
-
-
-;; switch Meta and Super key
-;; (setq mac-option-modifier 'super)
-
 
 
 ;;; init-editor.el ends here
