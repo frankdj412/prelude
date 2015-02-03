@@ -22,6 +22,8 @@
 (ido-vertical-mode 1)
 
 (evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+  ":" 'helm-M-x)
 
 ;;; Copied from spacemacs config: https://github.com/syl20bnr/spacemacs/blob/0e4dc90d5da35c419efb45acb5c46f1560446aa8/spacemacs/keybindings.el
 ;; Universal argument ---------------------------------------------------------
@@ -89,7 +91,7 @@
   ;; "fev" 'spacemacs/display-and-copy-version
   "fj" 'dired-jump
   "fo" 'prelude-open-with
-  "fo" 'spacemacs/open-in-external-app
+  ;; "fo" 'spacemacs/open-in-external-app
   "fS" 'evil-write-all
   "fs" 'evil-write
   "fy" 'show-and-copy-buffer-filename)
@@ -266,22 +268,24 @@
      (define-key evil-visual-state-map (kbd "C-'") 'evil-scroll-up)))
 
 ;; evil Nerd Commenter:
-(defun dj/evilnc-default-hotkeys ()
-  "Set the hotkeys of evil-nerd-comment"
-  (interactive)
-  (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
-  (global-set-key (kbd "C-c l") 'evilnc-comment-or-uncomment-to-the-line)
-  (global-set-key (kbd "C-c c") 'evilnc-copy-and-comment-lines)
-  (global-set-key (kbd "C-c p") 'evilnc-comment-or-uncomment-paragraphs)
-  (eval-after-load 'evil
-    '(progn
-       (define-key evil-normal-state-map "gci" 'evilnc-comment-or-uncomment-lines)
-       (define-key evil-normal-state-map "gcl" 'evilnc-comment-or-uncomment-to-the-line)
-       (define-key evil-normal-state-map "gcc" 'evilnc-copy-and-comment-lines)
-       (define-key evil-normal-state-map "gcp" 'evilnc-comment-or-uncomment-paragraphs)
-       (define-key evil-normal-state-map "gcr" 'comment-or-uncomment-region))))
+;; (defun dj/evilnc-default-hotkeys ()
+;;   "Set the hotkeys of evil-nerd-comment"
+;;   (interactive)
+;;   (global-set-key (kbd "M-;") 'evilnc-comment-or-uncomment-lines)
+;;   (global-set-key (kbd "C-c l") 'evilnc-comment-or-uncomment-to-the-line)
+;;   (global-set-key (kbd "C-c c") 'evilnc-copy-and-comment-lines)
+;;   (global-set-key (kbd "C-c p") 'evilnc-comment-or-uncomment-paragraphs)
+;;   (eval-after-load 'evil
+;;     '(progn
+;;        (define-key evil-normal-state-map "gci" 'evilnc-comment-or-uncomment-lines)
+;;        (define-key evil-normal-state-map "gcl" 'evilnc-comment-or-uncomment-to-the-line)
+;;        (define-key evil-normal-state-map "gcc" 'evilnc-copy-and-comment-lines)
+;;        (define-key evil-normal-state-map "gcp" 'evilnc-comment-or-uncomment-paragraphs)
+;;        (define-key evil-normal-state-map "gcr" 'comment-or-uncomment-region))))
+;; (dj/evilnc-default-hotkeys)
+;; (setq evilnc-hotkey-comment-operator "<SPC>,")
 
-(dj/evilnc-default-hotkeys)
-
+(evil-leader/set-key
+  "\\" 'evilnc-comment-operator)
 
 ;;; init-editor.el ends here

@@ -6,7 +6,7 @@
 ;;; Code:
 
 (defun surround (start end txt)
- "Wraps the specified region (or the current 'symbol / word'
+  "Wraps the specified region (or the current 'symbol / word'
 with some textual markers that this function requests from the
 user. Opening-type text, like parens and angle-brackets will
 insert the matching closing symbol.
@@ -27,8 +27,8 @@ This function also supports some org-mode wrappers:
         (setq start (car new-region))
         (setq end (cdr new-region))))
 
-    ;; We create a table of "odd balls" where the front and the end are
-    ;; not the same string.
+  ;; We create a table of "odd balls" where the front and the end are
+  ;; not the same string.
   (let* ((s-table '(("#e" . ("#+BEGIN_EXAMPLE\n" "\n#+END_EXAMPLE") )
                     ("#s" . ("#+BEGIN_SRC \n"    "\n#+END_SRC") )
                     ("#q" . ("#+BEGIN_QUOTE\n"   "\n#+END_QUOTE"))
@@ -56,11 +56,28 @@ This function also supports some org-mode wrappers:
       (surround (region-beginning) (region-end) txt)
     (surround nil nil txt)))
 
-
 (defun spacemacs/alternate-buffer ()
   "Switch back and forth between current and last buffer."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) t)))
+
+(defun spacemacs/next-error (&optional n reset)
+  "Dispatch to flycheck or standard emacs error."
+  (interactive "P")
+  (if (and (boundp 'flycheck-mode)
+           (symbol-value flycheck-mode))
+      (call-interactively 'flycheck-next-error)
+    (call-interactively 'next-error)))
+
+(defun spacemacs/previous-error (&optional n reset)
+  "Dispatch to flycheck or standard emacs error."
+  (interactive "P")
+  (if (and (boundp 'flycheck-mode)
+           (symbol-value flycheck-mode))
+      (call-interactively 'flycheck-previous-error)
+    (call-interactively 'previous-error)))
+
+
 
 (provide 'dj-funcs)
 

@@ -76,13 +76,24 @@
 ;; The default is automatic, which seems to point to Rope.
 ;; Jedi is much more lightweight and its parsing function is more robust
 (setq elpy-rpc-backend "jedi")
+(eval-after-load 'python '(semantic-mode 1))
 
 (elpy-enable)
+
+(define-key python-mode-map (kbd "s-.") 'elpy-goto-definition)
+(define-key python-mode-map (kbd "s-*") 'pop-tag-mark)
+
+(evil-leader/set-key-for-mode 'python-mode-map
+  "cf" 'elpy-find-file
+  "cs" 'elpy-rgrep-symbol
+  "cz" 'elpy-shell-switch-to-shell
+  "cc" 'elpy-shell-send-region-or-buffer
+  "cd" 'python-shell-send-defun)
 
 ;; Rope seems to have some problem
 
 
-;;; TODO: write a function for auto import the modules.
+;; TODO: Auto import library
 
-;;; TODO: bound flymake-next error to <leader> + n
+;; TODO: Go to definition: if two frames are available, switch to it.
 ;;; init-python.el ends here

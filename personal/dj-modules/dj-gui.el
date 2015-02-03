@@ -29,7 +29,8 @@
 
 (require 'powerline)
 (require 'powerline-evil)
-(powerline-evil-vim-color-theme)
+;; (powerline-evil-vim-color-theme)
+(powerline-center-evil-theme)
 
 (provide 'dj-gui)
 ;;; dj-gui.el ends here

@@ -11,6 +11,8 @@
 (global-set-key (kbd "C-+") 'zoom-in)
 (global-set-key (kbd "C--") 'zoom-out)
 
+(scroll-bar-mode -1)
+
 ;; Smooth Scrolling effect
 ;; Copied from http://stackoverflow.com/questions/445873/how-can-i-make-emacs-mouse-scrolling-slower-and-smoother
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))

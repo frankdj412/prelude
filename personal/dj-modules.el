@@ -8,5 +8,6 @@
 
 ;;(require 'dj-cli)
 (require 'dj-gui)
+(require 'dj-osx)
 
 ;;; dj-modules.el ends here
